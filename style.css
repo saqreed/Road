@@ -232,24 +232,24 @@ button:hover {
     display: flex;
     justify-content: center; /* Центрирование по горизонтали */
     align-items: center; /* Центрирование по вертикали */
-    flex-wrap: wrap; /* Чтобы проекты располагались в несколько строк при необходимости */
+    flex-wrap: wrap; /* Проекты будут оборачиваться в несколько строк */
     gap: 20px; /* Расстояние между проектами */
     padding: 20px;
 }
 
 .project {
     background: rgba(255, 255, 255, 0.9); /* Полупрозрачный фон */
-    color: #333; /* Цвет текста */
+    color: #333;
     padding: 20px;
-    border-radius: 10px; /* Смягчённые углы */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для выделения */
-    width: 45%; /* Устанавливаем ширину для проекта, чтобы он был ближе к квадратной форме */
-    max-width: 500px; /* Ограничиваем максимальную ширину */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 45%; /* Для десктопов — 45% ширины */
+    max-width: 500px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Распределение контента по вертикали */
-    height: auto; /* Высота будет зависеть от контента */
-    text-align: center; /* Центрирование текста */
+    justify-content: space-between;
+    text-align: center;
+    transition: width 0.3s ease;
 }
 
 .project h2 {
@@ -269,9 +269,70 @@ button:hover {
     background-color: #8f1606;
     color: white;
     cursor: pointer;
-    margin: 0 auto; /* Центрируем кнопку внутри проекта */
+    margin: 0 auto;
 }
 
 .project button:hover {
-    background-color: #6f1204; /* Темнее при наведении */
+    background-color: #6f1204;
+}
+
+@media (max-width: 768px) {
+    .project {
+        width: 100%; /* Занимает всю ширину экрана на планшетах */
+        max-width: 100%; /* Убираем ограничение ширины */
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-direction: column; /* Вертикальное расположение ссылок в меню */
+        align-items: center;
+    }
+
+    .navbar ul li {
+        margin: 10px 0; /* Добавляем отступы между ссылками */
+    }
+
+    .banner h1 {
+        font-size: 48px; /* Уменьшаем размер заголовка */
+    }
+
+    .banner p {
+        font-size: 18px; /* Уменьшаем размер текста */
+    }
+}
+
+
+@media (max-width: 480px) {
+    .project {
+        width: 100%; /* Занимает всю ширину на мобильных */
+        padding: 15px; /* Уменьшаем отступы для компактности */
+    }
+
+    .project h2 {
+        font-size: 20px; /* Уменьшаем размер заголовка на мобильных */
+    }
+
+    .project p {
+        font-size: 16px;
+    }
+
+    .banner h1 {
+        font-size: 36px; /* Еще сильнее уменьшаем размер заголовка */
+    }
+
+    .banner p {
+        font-size: 16px;
+    }
+
+    .reviews-container {
+        grid-template-columns: 1fr; /* В один столбец на мобильных устройствах */
+    }
+
+    .reviews {
+        padding: 10px;
+    }
+
+    button {
+        width: 100%; /* Кнопки занимают всю ширину на мобильных */
+    }
 }
