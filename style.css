@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    box-sizing: border-box;
 }
 
 header {
@@ -277,47 +278,49 @@ button:hover {
 }
 
 @media (max-width: 768px) {
-    .project {
-        width: 100%; /* Занимает всю ширину экрана на планшетах */
-        max-width: 100%; /* Убираем ограничение ширины */
-    }
-
     .navbar ul {
-        display: flex;
-        flex-direction: column; /* Вертикальное расположение ссылок в меню */
+        flex-direction: column;
         align-items: center;
     }
 
     .navbar ul li {
-        margin: 10px 0; /* Добавляем отступы между ссылками */
+        margin: 10px 0;
     }
 
     .banner h1 {
-        font-size: 48px; /* Уменьшаем размер заголовка */
+        font-size: 48px;
     }
 
     .banner p {
-        font-size: 18px; /* Уменьшаем размер текста */
+        font-size: 18px;
+    }
+
+    .reviews-container {
+        grid-template-columns: 1fr; /* Один столбец на планшетах */
+    }
+
+    .project {
+        width: 100%; /* Полная ширина для проектов на планшетах */
+    }
+
+    .projects-container {
+        flex-direction: column; /* Вертикальная ориентация проектов */
+        align-items: center;
     }
 }
 
-
 @media (max-width: 480px) {
-    .project {
-        width: 100%; /* Занимает всю ширину на мобильных */
-        padding: 15px; /* Уменьшаем отступы для компактности */
+    .navbar ul {
+        flex-direction: column;
+        gap: 5px;
     }
 
-    .project h2 {
-        font-size: 20px; /* Уменьшаем размер заголовка на мобильных */
-    }
-
-    .project p {
-        font-size: 16px;
+    .navbar ul li {
+        margin: 5px 0;
     }
 
     .banner h1 {
-        font-size: 36px; /* Еще сильнее уменьшаем размер заголовка */
+        font-size: 36px;
     }
 
     .banner p {
@@ -325,14 +328,27 @@ button:hover {
     }
 
     .reviews-container {
-        grid-template-columns: 1fr; /* В один столбец на мобильных устройствах */
+        grid-template-columns: 1fr; /* Один столбец на мобильных */
     }
 
-    .reviews {
+    .projects-container {
+        flex-direction: column;
+    }
+
+    .projects-content, .reviews-content {
         padding: 10px;
     }
 
+    .project {
+        width: 100%; /* Полная ширина проектов на мобильных */
+        padding: 15px; /* Уменьшенные отступы */
+    }
+
+    .review {
+        height: auto; /* Убираем фиксированную высоту */
+    }
+
     button {
-        width: 100%; /* Кнопки занимают всю ширину на мобильных */
+        width: 100%; /* Кнопки на мобильных занимают всю ширину */
     }
 }
