@@ -14,7 +14,7 @@
 <body>
     <header>
         <div class="navbar">
-            <a href="#top" id="logo-link"><img src="1.png" alt="Логотип" class="logo"></a>
+            <a href="#top" id="logo-link"><img src="images/1.png" alt="Логотип" class="logo"></a>
             <ul>
                 <li><a href="#top">Главная</a></li>
                 <li><a href="#about">О нас</a></li>
@@ -82,6 +82,25 @@
             </div>
         </div>
     </section>
+    <section id="contact-form">
+        <div class="form-container">
+            <h1>Оставьте свою заявку</h1>
+            <form action="send_email.php" method="POST">
+                <label for="name">ФИО:</label>
+                <input type="text" id="name" name="name" required>
     
+                <label for="email">Почта:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="work_type">Тип работ:</label>
+                <input type="text" id="work_type" name="work_type" required>
+    
+                <label for="phone">Контактный номер:</label>
+                <input type="text" id="phone" name="phone" required>
+    
+                <button type="submit">Отправить заявку</button>
+            </form>
+        </div>
+    </section>    
 </body>
 </html>
